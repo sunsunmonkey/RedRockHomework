@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网抑晕</title>
+    <style type="text/css">
+        .big{
+            width: 435px;
+            height:660px;
+            /* background-color: blueviolet; */
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin: -330px 0 0 -217.5px;
+           box-shadow: 20px 20px 100px 10px black;
+        }
+        .exit{
+            position:absolute;
+            left: 100%;
+            transform: translate(-100%,0);
+            width:40px ;
+            height:35px ;
+        }
+        .logo{
+           width: 70px;
+            position: absolute;
+            left: 50%;
+            top: 15%;
+            transform: translate(-50%,-50%);
+        }
+        .box0{
+            height:82.5px;
+            width:435px;
+            position:absolute;
+            top: 47%;
+            width: 340px;
+            left: 10.5%;
+        }
+        .i{
+           display: block;
+            width: 100px;
+            background-image: url(./phone.png);
+            background-repeat: no-repeat;
+            padding-left: 50px;
+            height: 50px;
+            background-size: 25px;
+            background-position:10px,10px;
+            border-color:rgb(171, 170, 170) ;
+            border:0.5px solid rgb(171, 170, 170) ;
+            position: absolute;
+            left: 22%;
+            top: 33%;
+            transform: translate(-50%,-50%);
+        }
+        .tel{
+            height: 47px;
+            border-color:rgb(171, 170, 170) ;
+            border:0.5px solid rgb(171, 170, 170) ;
+            width:240px;
+            display: block;
+            margin-left: 0px;
+            position: absolute;
+            left: 61%;
+            top: 33%;
+            transform: translate(-50%,-50%);
+            text-indent:10px ;   
+        }
+        .o{
+            height: 47px;
+            width: 289px;
+            border-color:rgb(171, 170, 170) ;
+            border:0.5px solid rgb(171, 170, 170) ;
+            border-top: 0px;
+            display: block;
+            margin-top: 0px;
+            background-image: url(./锁.png);
+            background-repeat: no-repeat;
+            padding-left: 50px;
+            background-position:10px,10px;
+            position: absolute;
+            left:10.5%;
+            top: 36.9%;
+        }
+        .box1{
+            float: left;
+        }
+        .box2,.box3,.box4{
+            float: right;
+            margin: 0 0 0 12px;
+        }
+        .a1{
+            text-decoration: dashed;
+            color: rgba(64, 122, 229, 0.975);
+           
+        }
+        .hz{
+            background-color: aqua;
+            position:absolute;
+            top: 57%;
+        }
+        .submit{
+            background-color: rgb(255, 70, 50);
+            width:340px ;
+            height:47px ;
+            border: 0;
+            border-radius: 5px;
+            font-size: large;
+            color: rgb(253, 250, 250);
+        }
+        .hz2{
+            position:absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+        }
+        .hz1{
+            position:absolute;
+            top: 0%;
+            left: 45px;
+        }
+        .hz2{
+            position:absolute;
+            top: 79px;
+            left:250px;
+            width:100px ;
+            text-decoration: underline;
+        }
+        .photo{
+            position: absolute;
+            top: 75%;
+            display:flex;
+            justify-content: space-around;
+            width: 400px;
+            left: 3.5%;
+        }
+        .ps1{
+            width:50px;
+            height: 52px;
+        }
+        .ps2{
+            width:46px;
+            height: 50px;
+
+        }
+        .ps3{
+            width:50px;
+            height: 48px;
+
+        }
+        .ps4{
+            width:50px;
+            height: 48px;
+        }
+        .bottom{
+            position: absolute;
+            top:88%;
+            left: 7%;
+            width: 435px ;     
+                   
+        }
+        .l1{
+            text-decoration: dashed;
+            color: rgba(45, 89, 171, 0.975);
+        }
+    </style>
+</head>
+<body>
+    <div class="big">
+    <a href="http://www.cqupt.edu.cn/"><img class="exit" src="./错号.png"  title="退出"></a>
+    <img src="./图标.png" class="logo">
+    <form>
+    <select name="num" class="i">
+        <option value="+86">+86</option>
+        <option value="+82">+82</option>
+        <option value="+82">+qq</option>
+    </select>    
+    <input type="tel" name="帐号" maxlength="11" class="tel" placeholder="请输入手机号">
+    
+    <input type="password" name="密码" class="o" placeholder="请输入密码">
+   </form>
+     <div class="box0">
+        <div class="box1"><input type="checkbox">自动登录</div>
+        <div class="box3"><a href="http://jwzx.cqupt.edu.cn/" target="_blank" class="a1">验证码登录</a></div>
+        <div class="box4" style="color:rgb(180, 180, 180);">|</div>
+        <div class="box2"><a href="https://zhidao.baidu.com/question/1838702861464177020.html" target="_blank" class="a1">忘记密码</a></div>
+        
+    </div>
+    <div class="hz">
+        <div class="hz1"><input type="submit" class="submit" value="登录"></div>
+        <div class="hz2">注册</div>
+    </div>
+    </form>
+    <div class="photo">
+        <img src="./微信.png" class="ps1">
+        <img src="./QQ.png" class="ps2">
+        <img src="./微博.png" class="ps3" >
+        <img src="./网易.png" class="ps4">
+    </div>
+    <div class="bottom">
+        <div style="float:left;"><input type="checkbox" class="check"><span style="color:grey;">同意</span></div>
+        <div  style="float:left;">《<a href="https://sf.163.com/help/documents/326808752639627264" target="_blank" class="l1">服务条款</a>》</div>
+        <div style="float:left;">《<a href="https://st.music.163.com/official-terms/privacy" target="_blank" class="l1">隐私政策</a>》</div>
+        <div style="float:left;">《<a href="https://st.music.163.com/official-terms/children" target="_blank" class="l1">儿童隐私政策</a>》</div>
+    </div>  
+
+
+
+    </div>
+</body>
+</html>
