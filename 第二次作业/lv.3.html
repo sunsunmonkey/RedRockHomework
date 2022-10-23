@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+     .box1{
+        height: 500px;
+        border: 2px solid black;
+        width: 320px;
+        margin: 5px;
+        flex-shrink: 0;
+     } 
+     .box2{
+        height:300px;
+        border: 2px solid black;
+        width: 320px;
+        margin: 5px;
+        flex-grow: 1;
+     }  
+     .box3{
+        height:100px;
+        border: 2px solid black;
+        width: 320px; 
+        margin: 5px;  
+        align-self: flex-start;
+     }
+     .box4{
+        height:600px;
+        border: 2px solid black;
+        width: 320px; 
+        margin: 5px;  
+        flex-shrink: 2;
+     }
+     body{
+        display:flex;
+        align-items: center;
+        margin: 5px;
+     }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        一号盒子
+        <p>我始终保持原大小，不缩放。</p>
+      </div>
+      <div class="box2">
+        二号盒子
+        <p>浏览器界面变宽时，我占满其他元素剩下的所有空间</p>
+      </div>
+      <div class="box3">
+        三号盒子
+        <p>我和四号盒子的顶部对齐</p>
+      </div>
+      <div class="box4">
+        四号盒子
+        <p>浏览器界面变窄时，我缩窄的速度要比二、三号盒子快</p>
+      </div>
+</body>
+</html>
+<!-- flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。 -->
