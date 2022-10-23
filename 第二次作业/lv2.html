@@ -7,7 +7,7 @@
     <title>Document</title>
     <style type="text/css">
         html,body{
-	    height: 100%;
+	    height:100%;
         justify-content: center;
          align-items: center;
         display: flex;
@@ -17,6 +17,7 @@
             height:660px;
             border-radius:15px ;
             box-shadow:2px 2px 5px 5px rgb(200, 197, 197);
+            transition: all 0.35s linear 0.05s;
         }
         .big:hover{
             box-shadow:2px 2px 5px 7px rgb(200, 197, 197);
@@ -26,6 +27,8 @@
             width: 500px;
             height:300px; 
             border-radius:15px  15px 0 0;  
+            transition: all 0.25s linear 0.05s;
+            /* 第一个值为需要变化的属性值，第二个值为其持续时间，第三个值为变化方式，第四个值为其延时 */
         }
         .fe:hover{
             transform: scale(1.2)
