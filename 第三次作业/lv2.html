@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = [1,[2,3],[4,5,[6,7,8]],9];
+        function flatten1(arr) {
+           let f= arr.reduce((total,cur,index)=>{
+                return total.concat(cur)
+            },[])   
+            let a=f.reduce((total,cur,index)=>{
+                return total.concat(cur)
+            },[])   
+            return a;
+          
+        }
+        console.log(flatten1(arr));
+        
+        let arr1 = [1,[2,3],[4,5,[6,7,8]],9];
+        let flatten2 = (arr) => {
+        let res = [];
+        for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+         res= res.concat(flatten2(arr[i]));
+         } else {
+            res.push(arr[i]);
+        }
+        }
+        return res;
+    };
+        console.log(flatten2(arr1));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
