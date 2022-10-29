@@ -32,10 +32,18 @@
         return res;
     };
         console.log(flatten2(arr1));
-
-    </script>
+    let arr2 = [1,[2,3],[4,5,[6,7,8]],9];
+        function flatten1(arr) {
+           var f= arr.reduce((total,cur,index)=>{
+                return total.concat(cur)
+            },[])      
+          return f;
+        }
+        
+        console.log(flatten1(flatten1(arr2))); 
+         </script>
 </head>
 <body>
-    
+;
 </body>
 </html>
