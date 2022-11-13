@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>更改字体颜色和背景颜色</h1>
+		<select id="sel">
+			<option value="bule">蓝色</option>
+			<option value ="red">红</option>
+			<option value="pink">粉</option>
+			<option value="purple">紫</option>
+			<option value="grend">绿</option>
+			<option value="yellow">黄</option>
+			<option value="orange">橙</option>
+		</select>
+		<script type="text/javascript">
+			let a=document.querySelector("select");
+			console.log(a);
+			document.getElementById("sel").onchange=function(){
+				document.bgColor=this.value;
+				document.fgColor=this.value+255;
+			};
+		</script>
+	</body>
+</html>

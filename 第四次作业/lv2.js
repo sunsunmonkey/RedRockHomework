@@ -1,3 +1,4 @@
+this.name="fiuck"
 const stu = {
     name: 'MING',
     hobby: ['play', 'run', 'sing'],
@@ -13,9 +14,8 @@ const stu = {
     }
 }
 const fn = function (obj) {
-   obj.name=stu.skills.speak
+   obj.name=stu.skills.speak();
    obj.name();
 }
-fn(stu)
-
-console.log(stu.name); 
+fn(stu);
+console.log(stu.name);
