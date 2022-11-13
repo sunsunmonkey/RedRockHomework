@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+        display: block;   
+        resize:none;
+        border-radius: 25px;
+        padding: 9px;  
+        font-size: 20px;
+        position:absolute;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%); 
+        box-shadow: 20px 20px 100px 10px rgb(0, 30, 105); 
+        outline: none;
+        border: 0px;
+        }
+        h1{
+            text-align:center;
+            font-size: 80px;
+            color: rgb(198, 213, 249);
+        }
+        input{
+            display: block;
+            height: 50px; 
+            width: 70px; 
+            background-color: white;
+            border-radius: 5px;
+            border: 0px solid gray; 
+            font-size: 20px;
+            color: rgb(36, 133, 185);
+            position:absolute;
+            left:75%;
+            top: 90%;
+            transform: translate(-50%, -50%); 
+            box-shadow: 20px 0px 100px 10px rgb(97, 109, 139); 
+            outline:none;
+        } 
+
+        p{
+            background-color:rgb(151, 171, 227);
+            height: 250px;
+            width: 1025px;
+            padding: 10px;  
+            box-shadow: 20px 0px 100px 10px rgb(147, 166, 216); 
+            border-radius: 25px;
+            position:absolute;
+            left:50%;
+            top: 32%;
+            transform: translate(-50%, -50%); 
+            color: white;
+            font-size:20px;
+          
+        }
+        .delete{
+            display: block;
+            height: 50px; 
+            width: 70px; 
+            background-color: white;
+            border-radius: 5px;
+            border: 0px solid gray; 
+            font-size: 20px;
+            position:absolute;
+            left:70%;
+            top: 90%;
+            transform: translate(-50%, -50%); 
+            color:rgb(241, 12, 12) ;
+            outline:none;
+        }
+        .i{
+            display: block;
+            font-size: large;
+            height: 50px; 
+            width: 70px;
+            border-radius:5px;
+            position:absolute;
+            left: 65%;
+            top: 90%;
+            transform: translate(-50%, -50%); 
+            outline:none;
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>留言板</h1>
+    <p>留下你的评论吧qwq</p>
+    <textarea cols="100" rows="10" ></textarea>
+    <input type="submit" value="评论">
+    <button value="删除" class="delete">删除</button>
+    <select name="num" class="i">
+        <option value="white" style="color:black ;">白色</option>
+        <option value="gray" style="color:gray ;">灰色</option>
+        <option value="red"  style="color:red ;">红色</option>
+        <option value="blueviolet"  style="color:blueviolet">紫色</option>
+        <option value="black" style="color:black ;">黑色</option>
+        <option value="dodgerblue"  style="color:dodgerblue">浅蓝</option>
+        <option value="green"  style="color:green">绿色</option>
+    </select>
+    <script>
+        const input=document.querySelector("input")
+        const textarea=document.querySelector("textarea")
+        const p=document.querySelector("p")
+        const ol=document.querySelector("ol")
+        const deletes=document.querySelector(".delete")
+        let click1=()=>{
+            var li = document.createElement("li");
+            li.innerHTML=textarea.value;
+            p.appendChild(li);
+            textarea.value=" ";
+        }
+        let click2=()=>{    
+            const result=confirm("确认要清除所有留言吗");
+            if(result===true){
+           p.innerHTML="留下你的评论吧qwq";
+            }
+        }
+        input.addEventListener("click",click1);
+        deletes.addEventListener("click",click2);
+        const select=document.querySelector(".i");
+        select.onchange=function(){
+				const colour=select.value;
+                if(colour!="white"){
+                select.style.color=colour;
+                }else{
+                    select.style.color="black";
+                }
+                p.style.color=colour;
+			};
+
+    </script>
+</body>
+</html>
