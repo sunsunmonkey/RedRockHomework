@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width: 500px;
+            height: 200px;
+            text-indent:2em;
+            font-size: larger;
+        }
+        .div1{
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);  
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"><h2>《记承天寺夜游》</h2>
+    <P id="div"></P>
+</body>
+<script>
+    const a="元丰六年十月十二日夜，解衣欲睡，月色入户，欣然起行。念无与为乐者，遂至承天寺寻张怀民。怀民亦未寝，相与步于中庭。庭下如积水空明，水中藻、荇交横，盖竹柏影也。何夜无月？何处无竹柏？但少闲人如吾两人者耳。"
+    const div=document.querySelector("#div");   
+//用async
+    let step=(i)=>{
+    return new Promise((resolve)=>{  
+        setTimeout(() => {
+        resolve(div.innerHTML+=a.slice(i-1,i))          
+        }, 50);
+    })
+    }
+    async function b(i){
+        if(i>100){
+            return;
+        }
+        await step(i);
+        b(i+1);
+    }
+    b(1);
+ //直接用函数递归   
+    // function insert(i){
+    //     setTimeout(()=>{
+    //         if(i>100){
+    //         return;
+    //     }
+    //         div.innerHTML+=a.slice(i-1,i);
+    //         insert(i+1);  
+    //     },50)  
+    // }
+    // insert(1);
+</script>
+</html>
