@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            border-radius: 50px;
+        }
+        .transition{
+        	transition-duration:2s;
+            transform: translateX(300px);
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: aqua;" id="a"></div>
+    <div style="background-color: orange;" id="b"></div>
+    <div style="background-color:gray;" id="c"></div>
+    <script>
+        const a=document.querySelector("#a")
+        const b=document.querySelector("#b")
+        const c=document.querySelector("#c")
+//法一
+        // function time(){
+        //     setTimeout(() => {
+        //        a.classList.add("transition")
+        //        setTimeout(() => {
+        //         b.classList.add("transition")
+        //         setTimeout(() => {
+        //             c.classList.add("transition")
+        //             }, 2000);
+        //        }, 2000);
+        //     }, 500);
+        // }
+        // time();
+//法二
+        // function time(a,time){setTimeout(() => {
+        //         a.classList.add("transition")
+        //     }, time);
+        // }     
+        // let p = new Promise((resolve,reject)=>{
+        //     resolve(time(a,500))
+        // }).then(()=>{
+        //     time(b,2500);  
+        // }).then(()=>{
+        //     time(c,4500);
+        // })
+//法三
+        // function times (a,timeout){
+        //     return new Promise((resolve)=>{
+        //     setTimeout(() => {
+        //     a.classList.add("transition")    
+        //     resolve();
+        //      }, timeout);
+        //  })
+        // } 
+        // async function time() {
+        //     await times(a,500);
+        //     await times(b,2000);
+        //     await times(c,2000);
+
+        // }
+        // time();
+
+        
+    </script>
+</body>
+</html>
