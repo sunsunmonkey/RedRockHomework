@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<style>
+  h1{
+    text-align: center;
+  }
+  .box {
+    position: absolute;
+    width: 600px;
+    height: 858px;
+    background-color: rgb(241, 244, 244);
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .box2{
+    margin: 10px 10px 10px 0px;
+  }
+  .User {
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+    align-items:center;
+  }
+  .boxx{
+    margin: 5px;
+  }
+  .Url {
+    border-radius:3px;
+    width: 50px;
+    height: 52px;
+  }
+  .shuru{
+    width:500px ;
+    height: 30px;
+    outline:none;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+  }
+  .post{
+    width:80px ;
+    height: 35px;
+    color: rgb(255, 255, 255);
+    border: 0;
+    background-color: rgb(11, 139, 134);
+    border-radius: 5px;
+  }
+  .post:hover{
+    background-color: rgb(19, 107, 104);
+  }
+  .rename{
+    width:70px ;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    border: 0;
+    background-color: rgb(75, 232, 227);
+    border-radius: 5px;
+  }
+  .rename:hover{
+    background-color: rgb(171, 243, 241);
+  }
+  .name{
+    padding: 3px;
+    width:150px ;
+    height: 20px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+  }
+</style>
+<html>
+  <body>
+    <div class="div">
+      <h1>聊天室</h1>
+      <!-- <button class="rename">修改昵称</button> -->
+      <!-- <h2>一些介绍：https://chovrio.club/chatroom/</h2> -->
+      <div class="box">
+        <input type="text" class="shuru"/>
+        <button class="post">发送消息</button>
+      </div>
+    </div>
+    <script>
+     //想写改昵称但好像不太能改
+      // let rename=document.querySelector(".rename");
+      // let a=0;
+      // const img="https://img2.baidu.com/it/u=3780108527,1887608868&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1669741200&t=1c4c20a805cdf03375e22657b6c67fbb"
+      // let ws; // 监听地址端口号
+      // rename.addEventListener("click",()=>{
+      //      if(a==0){
+      //     var name1 = document.createElement("input");
+      //      name1.className="name"
+      //      name1.setAttribute("type","text");
+      //      let div = document.querySelector(".div");
+      //      let div1 = document.createElement("div1");
+      //      div1.className="box2"
+      //      div1.append(name1)
+      //      document.querySelector(".div").append(div1);
+      //      rename.innerHTML="确认"
+      //      }
+      //      ws = new WebSocket("ws://chatroom.chovrio.club/")
+      //     a++;
+      //     console.log(a);
+      //     alert(a)
+      //     })
+        let name="鼠标侠"
+        const img="https://img2.baidu.com/it/u=3780108527,1887608868&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1669741200&t=1c4c20a805cdf03375e22657b6c67fbb"
+        let url="ws://chatroom.chovrio.club/?name="+name+"&url="+img;
+        const ws = new WebSocket(url); // 监听地址端口号
+      // 建立连接后
+      ws.onopen = function () {
+        console.log("服务器连接");
+      };
+      // 服务器发送数据后
+  
+      ws.onmessage = ({ data }) => {
+        const resData = JSON.parse(data); 
+        console.log("服务端发过来数据", resData);
+        const div = document.createElement("div");
+        div.className = "User";
+        const img = document.createElement("img");
+        img.className = "Url";
+        img.src = resData.url;
+        const name = document.createElement("div");
+        const content=document.createElement("span");
+        const boxx = document.createElement("div");
+        boxx.className="boxx"
+        if(resData.nickname=="鼠标侠"){
+           div.style.flexDirection="row-reverse";
+        }
+        content.innerHTML=resData.message;
+        name.innerHTML = resData.nickname;
+        name.style.color="gray";
+        name.style.fontSize="7px";
+        name.style.textAlign="center";
+        boxx.append(name);   
+        boxx.append(img);
+        div.append(boxx);
+        div.append(content);
+        document.querySelector(".box").append(div);
+      }; 
+      // 服务器关闭后
+      ws.onclose = () => {
+        console.log("服务器关闭");
+      };
+      // 昵称修改
+      function nickUpdateClick(name) {
+        if (ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify(name));
+        }
+      }
+
+      // 发送消息
+      function sendMessageClick(msg) {
+        if (ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify(msg));
+        }
+      }
+
+      document.querySelector(".post").addEventListener("click", () => {
+      
+        console.log(111);
+        let remark=document.querySelector("input")
+        if(remark.value.length>25){
+          const result=confirm("少侠给个面子少说点吧🤫");
+          if(result==true){
+          alert("我是懒狗");
+         }else{
+          alert("调皮啊");
+           remark.value=" ";
+        }
+        }else if(remark.value.length==0){
+          alert("说点啥嘛😎")
+        }else{
+          sendMessageClick(remark.value);
+          remark.value=" ";
+        }
+      
+      });
+    
+    </script>
+  </body>
+</html>
+<!-- lv3其实做不做都无所谓的，简单说一下lv3吧。lv3其实是一个在线聊天室，在/chatroom那个接口里面我已经返回了我写好的一些内容，有兴趣的同学可以自行将它完善成一个真正的聊天室(写写样式就行了)，发送消息的函数我已经写好了，另外建立连接的时候可以携带params参数/chatroo,?name=?&url=?。name是名字，url是头像，不携带的话就是默认的
+我是懒狗不想写样式 -->
