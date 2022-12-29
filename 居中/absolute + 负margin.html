@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.wp {
+    border: 1px solid red;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.box {
+    background: green;    
+}
+
+.box.size{
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-top: -50px;
+    margin-left: -75px;
+     /* margin-bottom: 50px;
+    margin-right: 50px;这是我的多次尝试后得到的结论：当设置绝对定位的方向为top和left时，
+    margin中的bottom和right的值就毫无作用，只是习惯上设为0，
+    其实设置margin:-100px也是同样的效果，
+    甚至margin: -100px -200px 300px -100px效果也是一样的，
+    只要关心margin中的top和left。
+    当绝对定位方向为bottom和right时，同上。摘自慕课*/
+} 
+</style>
+</head>
+<body>
+    <div class="wp">
+        <div class="box size">123123</div>
+    </div>
+</body>
+</html>
