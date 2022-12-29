@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ /* 传统一点的 */
+   html,body{
+        height: 100%;    
+        margin: 0px;
+        /* body 有默认的margin在这里给去掉 */
+    }
+    .zhongjian{
+        position: absolute;
+        width: 100px;
+        height: 400px;
+        left: 50%;
+        top: 50%;
+        margin:-200px -50px;
+        background-color: antiquewhite;
+    }
+/* flex 布局 */
+    html,body{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .zhongjian{
+        width: 100px;
+        height: 400px;
+        background-color: antiquewhite;
+    } 
+    </style>
+</head>
+<body>
+    <div class="zhongjian"></div>
+</body>
+</html>
