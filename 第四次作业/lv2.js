@@ -14,7 +14,7 @@ const stu = {
     }
 }
 const fn = function (obj) {
-   obj.name=stu.skills.speak();
+   obj.name=stu.skills.speak;
    obj.name();
 }
 fn(stu);
