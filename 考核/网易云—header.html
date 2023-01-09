@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .header{
+            height: 70px;
+            box-sizing: border-box;
+            background: #242424;
+            border-bottom: 1px solid #000;
+        }
+        .headerbar{
+            display: flex;
+            justify-content: space-between;
+            height: 69px;
+            line-height: 69px;
+            /* background-color: aqua; */
+        }
+        /* .logo{
+            height: 69px;
+            width: 157px;
+            padding-right: 20px;
+            background-image: url(./image/topbar.png);
+        } */
+        .headerbar .bar_left .logo a{
+            display: block;
+            width: 157px;
+            padding-right: 20px;
+            /* 缩进使其看不到 */
+            text-indent: -9999px; 
+            background-image: url(./image/topbar.png);
+        }
+        .headerbar .bar_left{
+            display: flex;
+        }
+        .headerbar .bar_left ul{
+            display: flex;
+        }
+        .headerbar .bar_left .item{
+            position: relative;
+            display: block;
+            padding: 0 19.5px;
+            color: #CCC;
+            font-size: 14px;
+        }
+        .headerbar .bar_left .item:hover,
+        .headerbar .bar_left .item:active{
+            color: #fff;
+            background-color: #000;
+        }
+        .headerbar .bar_left .active::after{
+            position: absolute;
+            content: "";
+            width: 12px;
+            height: 7px;
+            bottom:-2px;
+            left: 0;
+            right: 0;
+            background: url(./image/topbar.png) -226px 0 ;
+            margin: 0 auto;
+        }
+        .headerbar .bar_left .hot::after{
+            position: absolute;
+            content: "";
+            height: 19px;
+            width: 28px;
+            background: url(./image/topbar.png) -190px 0;
+            top: 22px;
+            right: -10px;
+        }
+        .headerbar .bar_right{
+            display: flex;
+            align-items: center;
+            padding-right: 20px;
+        }
+        .headerbar .bar_right .login a{
+            color:#7878;
+        }
+        .headerbar .bar_right .login:hover a{
+            color: #ccc;
+        }
+        .headerbar .bar_right .login a:hover{
+            color: #7878;
+            text-decoration: underline;
+        }
+        .headerbar .bar_right .anthor a{
+            display: inline-block;
+            width: 90px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            color: #CCC;
+            border: 1px solid #4f4f4f; 
+            box-sizing: border-box;
+            border-radius: 20px;
+            margin: 0 20px;
+        }
+        .headerbar .bar_right .anthor a:hover{
+            color: #fff;
+            border-color: #fff;
+        }
+        .headerbar .bar_right .search{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 158px;
+            height: 32px;          
+            background: #fff url(./image/topbar.png) 0 -99px;
+            border-radius: 30px;
+          
+        }
+        .headerbar .bar_right .search input{
+            font-size: 12px;
+            width: 116px;
+            margin-right: 10px;    
+        }
+        .headerbar .bar_right .search input::-webkit-input-placeholder{
+            color: #9b9b9b;
+        }
+        .headernav{
+            height: 35px;
+            line-height: 35px;
+            background-color: #c20c0c;
+            box-sizing: border-box;
+            border-bottom: 1px solid #a40011;
+        }
+        .navbar{
+          
+            box-sizing: border-box;
+            padding-left: 180px;
+        }
+        .headernav .navbar ul{
+            display: flex;
+        }
+        .navbar .item span{
+            display: inline-block;
+            padding:  0 13px;
+            margin: 7px 17px;
+            height: 20px;
+            line-height: 21px;
+            border-radius: 20px;
+            color: #fff;
+           
+        }
+        .navbar .item{
+            display: block;
+        }
+        .navbar .item:hover span,
+        .navbar .item:active span{
+            background-color: #9b0909;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="headerbar wrapper_1">
+            <div class="bar_left">
+                <h1 class="logo">
+                    <a href="#">网易云音乐</a>
+                    <!-- 为了搜索擎而写的h1 -->
+                </h1>
+                <ul>
+                    <li><a href="#" class="item active">发现音乐</a></li>
+                    <li><a href="#" class="item">我的音乐</a></li>
+                    <li><a href="#" class="item">关注</a></li>
+                    <li><a href="#" class="item ">商城</a></li>
+                    <li><a href="#" class="item ">音乐人</a></li>
+                    <li><a href="#" class="item hot">下载客户端</a></li>
+                </ul>
+            </div>
+            <div class="bar_right">
+                <div class="search">
+                    <input type="text" placeholder="音乐/视频/电台/用户">
+                </div> 
+                <div class="anthor">
+                    <a href="#">创作者中心</a>
+                </div>
+                <div class="login">
+                    <a href="#">登录</a>
+                </div>
+            </div>
+        </div>
+        <div class="headernav">
+            <div class="navbar wrapper_1">
+                <ul>
+                    <li><a href="#" class="item"><span>推荐</span></a></li>
+                    <li><a href="#" class="item"><span>排行榜</span></a></li>
+                    <li><a href="#" class="item"><span>歌单</span></a></li>
+                    <li><a href="#" class="item"><span>主播电台</span></a></li>
+                    <li><a href="#" class="item"><span>歌手</span></a></li>
+                    <li><a href="#" class="item"><span>新碟上架</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

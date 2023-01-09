@@ -1,0 +1,20 @@
+.wrapper_1{
+    width: 1100px;
+    margin: 0 auto;
+}
+.wrapper_2{
+    width: 980px;
+    margin: 0 auto;
+}
+body{
+    font: 12px Arial, Helvetica, sans-serif;;
+}
+.headerbar_sprite{
+    display: inline-block;
+    background-image:url(../image/topbar.png) ;
+}
+.headerbar_icon_hot{
+    width: 28px;
+    height: 19px;
+    background-position: -190px 0;
+}
