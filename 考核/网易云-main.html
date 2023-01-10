@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云主要区域</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .main> .area{
+            display: flex;
+            justify-content: space-between;         
+            border: 1px solid #d3d3d3;
+            border-width: 0px 1px;
+            background-image: url(./image/main-background.png);
+        }
+        .main .area-left{
+            width: 729px;
+            padding: 20px 20px 40px;
+        }
+        .main .area-left .recommend .list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px 2px;
+        }
+        .main .area-left .recommend .list .item{
+            width: 140px;
+            height: 140px;
+            margin-bottom: 86px;
+        }
+        .recommend .list .item .top{
+            position: relative;
+        }
+        .recommend .list .item .top .cover{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            
+            background:url(./image/coverall.png) ;
+        }
+        .recommend .list .item .top .info{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 27px;
+            padding-left: 10px;
+            line-height: 27px;
+            font-style: 12px;
+            color: #ccc;
+            background:url(./image/coverall.png) 0 -537px;
+        }
+       .recommend .list .item .top .info .icon_music{
+        position: relative;
+        top: 1px;
+       }
+       .recommend .list .item .top .info .count{
+        margin-left: 4px;
+       }
+       .recommend .list .item .top .info .icon_play{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right:10px;
+        margin: auto 0;
+       }
+       .recommend .list .item .bottom{
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+       }
+       .recommend .list .item .bottom:hover{
+        text-decoration: underline;
+       }
+       .disc .disc-content{
+        height: 186px;
+        margin: 20px 0;
+        border: 1px solid #d3d3d3;
+        box-sizing: border-box;
+        
+       }
+       .disc .disc-content .inner{
+        position: relative;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 25px;
+        border: 1px solid #fff;
+        background-color: #f5f5f5;
+       }
+       .disc .disc-content .inner .roller{
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+       }
+       .disc .disc-content .inner .roller .disc-list{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-shrink: 0;
+        align-items: center;
+        padding-top: 10px;
+       }
+       .disc .disc-content  .disc-list .item{
+        width: 118px;
+        height: 150px;
+        background:url(./image/main-index.png) no-repeat -260px 100px;
+       }
+       .disc .disc-content  .disc-list .item .album{
+        position: relative;
+       }
+       .disc .disc-content  .disc-list .item .cover{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: url(./image/coverall.png) no-repeat 0 -570px;
+       }
+       .disc .disc-content  .disc-list .item .album .icon-play{
+        display: none;
+        position: absolute;
+        right: 20px;
+        bottom: 5px;
+        width: 22px;
+        height: 22px;
+        background: url(./image/iconall.png) 0 -85px no-repeat;
+       }
+       .disc .disc-content  .disc-list .item .album:hover .icon-play{
+        display: block;
+       }
+       .disc .disc-content  .disc-list .item a{
+        white-space: nowrap;
+        margin-top: 5px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+        padding-right: 10px;  
+       }
+       .disc .disc-content  .disc-list .item a:hover{
+        text-decoration: underline;
+       }
+       .disc .disc-content  .disc-list .item  .title{
+        color: #000;
+       }
+       .disc .disc-content  .disc-list .item  .anthor{
+        color: #666;
+       }
+       .disc .disc-content .inner .control{
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        top: 72px;
+        bottom: 0;
+        background-color: rgb(222, 222, 28);
+        background: url(./image/main-index.png);
+       }
+       .disc .disc-content .inner .control-left{
+        left: 2px;
+        background-position: -260px -75px;
+       }
+       .disc .disc-content .inner .control-left:hover{
+        background-position: -280px -75px;
+       }
+       .disc .disc-content .inner .control-right{
+        right: 2px;
+        background-position:-300px -75px;
+       }
+       .disc .disc-content .inner .control-right:hover{
+        background-position: -320px -75px;
+       }
+        .main .area-right{
+            width: 250px;
+        }
+        .main .area-right .user-login{
+            width: 250px;
+            height: 120px;
+            background: url(./image/main-index.png);
+        }
+        .main .area-right .user-login .desc{
+            width: 205px;
+            margin: 0 auto;
+            padding-top:16px ;
+            color: #666;
+        }
+        .main .area-right .user-login .btn{
+            display: block;
+            width: 100px;
+            height: 31px;
+            margin: 15px auto 0;
+            line-height: 31px;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+            background:url(./image/main-index.png) 0 -195px;
+            text-shadow: 0 1px 0 #8a060b;
+        } 
+        .main .area-right .user-login .btn:hover{
+            background-position: -110px -195px;
+        }
+        .main .area-right .settle-singer{
+            padding: 20px;
+        }
+        .main .hot-anchor{
+            padding: 20px;
+        }
+        .main .settle-singer .list{
+            padding: 10px 0;
+        }
+        .main .settle-singer .list .item{
+            display: flex;
+            width: 210px;
+            height: 62px;
+            margin-top: 15px;
+            background-color: #fafafa;
+        }  
+        .main .settle-singer .list .item .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 3px 8px;
+            flex: 1;
+            overflow: hidden;
+            border: 1px solid #e9e9e9;
+            border-left: none;
+        } 
+        .main .settle-singer .list .item .info .singer{
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+        }
+        .main .settle-singer .list .item .info .desc{
+            font-size: 4px;
+            color: #666;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .main .settle-singer .list .item:hover {
+            background: #f4f4f4;
+        }
+        .main .area-left .rank .content{
+            margin-top: 20px;
+            height: 472px;
+            background: url(./image/rank.png) no-repeat;
+            display: flex;
+        }
+        .main .area-left .rank .content .ranklist{
+            width: 230px;
+        }
+        .main .area-left .rank .content .ranklist .header{
+            display: flex;
+            height: 120px;
+            box-sizing: border-box;
+            padding: 20px 0 0 20px;
+        }
+       .content .ranklist .header .album {
+            position: relative;
+            width: 80px;
+            height: 80px;
+       }
+       .content .ranklist .header .album img{
+             width: 100%;
+             height: 100%;
+       }
+       .content .ranklist .header .album .cover{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: url(./image/coverall.png) no-repeat -145px -57px;
+       }
+       .content .ranklist .header .info {
+            padding:10px 12px;
+       }
+       .content .ranklist .header .info .title{
+            color: #333;
+       }
+       .content .ranklist .header .info .btn{
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background:url(./image/main-index.png) no-repeat ;
+       }
+       .content .ranklist .header .info .operation{
+        margin-top: 12px;
+       }
+       .content .ranklist .header .info .play{
+        background-position: -267px -205px;
+       }
+       .content .ranklist .header .info .play:hover{
+        background-position: -267px -235px;
+       }
+       .content .ranklist .header .info .favor{
+        background-position: -300px -205px;
+        margin-left: 8px;
+       }
+       .content .ranklist .header .info .favor:hover{
+        background-position: -300px -235px;
+       }
+       .content .ranklist .list .item{
+        display: flex;
+        height: 32px;
+        line-height: 32px;
+        padding-left: 15px;
+        padding-right: 5px;
+       }
+       .content .ranklist .list .item .no{
+            width: 35px;
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+       }
+       .content .ranklist .list .item:nth-child(-n+3) .no{
+            color: #c10d0c;
+       }
+       .content .ranklist .list .item .song{
+        flex: 1;
+        word-spacing:nowrap;
+       }
+       .content .ranklist .list .item .song:hover{
+        text-decoration: underline;
+       }
+       .content .ranklist .list .item:hover .operation{
+        display: flex;
+       }
+       .content .ranklist .list .item .operation{
+         display: none;
+         align-items: center;
+         width: 82px;
+       }
+       .content .ranklist .list .item .operation .btn{
+        width: 17px;
+        height: 17px;
+        margin-right: 8px;
+        background: url(./image/main-index.png) no-repeat;
+       }
+       .content .ranklist .list .item .operation .play{
+        background-position: -267px -268px;
+       }
+       .content .ranklist .list .item .operation .play:hover{
+        background-position: -267px -288px;
+       }
+       .content .ranklist .list .item .operation .add{
+        background: url(./image/icon2.png) 0 -700px ;
+        margin: 5px 6px 0 0;
+       }
+       .content .ranklist .list .item .operation .add:hover{
+        background-position: -22px -700px;
+       }
+       .content .ranklist .list .item .operation .favor{
+        background-position: -297px -268px;
+       }
+       .content .ranklist .list .item .operation .favor:hover{
+        background-position: -297px -288px;
+       }
+       .content .ranklist  .more{
+            height: 32px;
+            line-height: 32px;
+            text-align: right;
+            padding-right: 32px;
+       }
+       .content .ranklist  .more a:hover{
+            text-decoration: underline;
+       }
+    </style>
+</head>
+<body>
+   <div class="main">
+        <div class="area wrapper_2" >
+            <div class="area-left">
+            <div class="recommend">
+               <div class="header_red">
+                <div class="left">
+                    <h2 class="title">热门推荐</h2>
+                    <ul class="keywords">
+                        <li><a href="" class="item">华语</a></li>
+                        <li class="line">|</li>
+                        <li><a href=""  class="item">流行</a></li>
+                        <li class="line">|</li>
+                        <li><a href=""  class="item">摇滚</a></li>
+                        <li class="line">|</li>
+                        <li><a href=""  class="item">民谣</a></li>
+                        <li class="line">|</li>
+                        <li><a href=""  class="item">电子</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <a href="#" class="more">更多</a>
+                </div>
+               </div>
+               <div class="list">
+                <div class="item">
+                <div class="top">
+                    <img src="./image/album1.jpg" alt="音乐封面">
+                    <a class="cover" href="#"></a>
+                    <div class="info">
+                        <i class="icon_sprite icon_sprite_music icon_ music"></i>
+                        <span class="count">62万</span>
+                        <i class="icon_sprite icon_sprite_play icon_play"></i>
+                    </div>
+                </div>
+                <a class="bottom" href="#">
+                    予你情诗百首，余生你是我的所有
+                </a>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <img src="./image/album1.jpg" alt="音乐封面">
+                        <a class="cover" href="#"></a>
+                        <div class="info">
+                            <i class="icon_sprite icon_sprite_music icon_ music"></i>
+                            <span class="count">62万</span>
+                            <i class="icon_sprite icon_sprite_play icon_play"></i>
+                        </div>
+                    </div>
+                    <a class="bottom" href="#">
+                        予你情诗百首，余生你是我的所有
+                    </a>
+                </div>
+                    <div class="item">
+                        <div class="top">
+                            <img src="./image/album1.jpg" alt="音乐封面">
+                            <a class="cover" href="#"></a>
+                            <div class="info">
+                                <i class="icon_sprite icon_sprite_music icon_ music"></i>
+                                <span class="count">62万</span>
+                                <i class="icon_sprite icon_sprite_play icon_play"></i>
+                            </div>
+                        </div>
+                        <a class="bottom" href="#">
+                            予你情诗百首，余生你是我的所有
+                        </a>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <img src="./image/album1.jpg" alt="音乐封面">
+                        <a class="cover" href="#"></a>
+                        <div class="info">
+                            <i class="icon_sprite icon_sprite_music icon_ music"></i>
+                            <span class="count">62万</span>
+                            <i class="icon_sprite icon_sprite_play icon_play"></i>
+                        </div>
+                    </div>
+                    <a class="bottom" href="#">
+                        予你情诗百首，余生你是我的所有
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <img src="./image/album1.jpg" alt="音乐封面">
+                        <a class="cover" href="#"></a>
+                        <div class="info">
+                            <i class="icon_sprite icon_sprite_music icon_ music"></i>
+                            <span class="count">62万</span>
+                            <i class="icon_sprite icon_sprite_play icon_play"></i>
+                        </div>
+                    </div>
+                    <a class="bottom" href="#">
+                        予你情诗百首，余生你是我的所有
+                    </a>
+                    </div>
+                    <div class="item">
+                        <div class="top">
+                            <img src="./image/album1.jpg" alt="音乐封面">
+                            <a class="cover" href="#"></a>
+                            <div class="info">
+                                <i class="icon_sprite icon_sprite_music icon_ music"></i>
+                                <span class="count">62万</span>
+                                <i class="icon_sprite icon_sprite_play icon_play"></i>
+                            </div>
+                        </div>
+                        <a class="bottom" href="#">
+                            予你情诗百首，余生你是我的所有
+                        </a>
+                    </div>
+                        <div class="item">
+                            <div class="top">
+                                <img src="./image/album1.jpg" alt="音乐封面">
+                                <a class="cover" href="#"></a>
+                                <div class="info">
+                                    <i class="icon_sprite icon_sprite_music icon_ music"></i>
+                                    <span class="count">62万</span>
+                                    <i class="icon_sprite icon_sprite_play icon_play"></i>
+                                </div>
+                            </div>
+                            <a class="bottom" href="#">
+                                予你情诗百首，余生你是我的所有
+                            </a>
+                    </div>
+                    <div class="item">
+                        <div class="top">
+                            <img src="./image/album1.jpg" alt="音乐封面">
+                            <a class="cover" href="#"></a>
+                            <div class="info">
+                                <i class="icon_sprite icon_sprite_music icon_ music"></i>
+                                <span class="count">62万</span>
+                                <i class="icon_sprite icon_sprite_play icon_play"></i>
+                            </div>
+                        </div>
+                        <a class="bottom" href="#">
+                            予你情诗百首，余生你是我的所有
+                        </a>
+                    </div>
+               </div>
+            </div>
+            <div class="disc">
+                <div class="header_red">
+                    <div class="left">
+                        <h2 class="title">新碟上架</h2>
+                    </div>
+                    <div class="right">
+                        <a href="" class="more">更多</a>
+                    </div>
+                </div>
+                <div class="disc-content">
+                    <div class="inner">
+                        <div class="roller">
+                            <ul class="disc-list">
+                               <li class="item">
+                                <div class="album">
+                                    <img src="./image/disc1.jpg" alt="">
+                                    <a class="cover" href="#"></a>
+                                    <a class="icon-play" href="#"></a>
+                                </div>
+                                    <a class="title" href="">Phantom - The 4th Mini Album </a>
+                              
+                                    <a class="anthor" href="">威神V(WayV)</a>
+                                </li>
+                                <li class="item">
+                                    <div class="album">
+                                        <img src="./image/disc1.jpg" alt="">
+                                        <a class="cover" href="#"></a>
+                                        <a class="icon-play" href="#"></a>
+                                    </div>
+                                        <a class="title" href="">Phantom - The 4th Mini Album </a>
+                                  
+                                        <a class="anthor" href="">威神V(WayV)</a>
+                                </li>
+                                <li class="item">
+                                        <div class="album">
+                                            <img src="./image/disc1.jpg" alt="">
+                                            <a class="cover" href="#"></a>
+                                            <a class="icon-play" href="#"></a>
+                                        </div>
+                                            <a class="title" href="">Phantom - The 4th Mini Album </a>
+                                      
+                                            <a class="anthor" href="">威神V(WayV)</a>
+                                 </li>
+                                <li class="item">
+                                            <div class="album">
+                                                <img src="./image/disc1.jpg" alt="">
+                                                <a class="cover" href="#"></a>
+                                                <a class="icon-play" href="#"></a>
+                                            </div>
+                                                <a class="title" href="">Phantom - The 4th Mini Album </a>
+                                          
+                                                <a class="anthor" href="">威神V(WayV)</a>
+                                </li>
+                                <li class="item">
+                                            <div class="album">
+                                                <img src="./image/disc1.jpg" alt="">
+                                                <a class="cover" href="#"></a>
+                                                <a class="icon-play" href="#"></a>
+                                            </div>
+                                                <a class="title" href="">Phantom - The 4th Mini Album </a>
+                                          
+                                                <a class="anthor" href="">威神V(WayV)</a>
+                                </li>                                            
+                            </ul>
+                        </div>
+                        <a href="#" class="control control-left"></a>
+                        <a href="#" class=" control control-right"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rank">
+                <div class="header_red">
+                    <div class="left">
+                        <h2 class="title">榜单</h2>
+                    </div>
+                    <div class="right">
+                        <a href="" class="more">更多</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <dl class="ranklist rank-up">
+                       <dt class="header">
+                        <div class="album">
+                            <img src="./image/rankup.jpg" alt="">
+                            <a class="cover" href="#"></a>
+                        </div>
+                        <div class="info">
+                            <h3 class="title">飙升榜</h3>
+                            <div class="operation">
+                                <a href="#" class="btn play"></a>
+                                <a href="#" class="btn favor"></a>
+                            </div>
+                        </div>
+                       </dt>
+                       <dd class="list up-list">
+                        <ol>
+                            <li class="item">
+                                <span class="no">1</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">2</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">3</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">4</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">5</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">6</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">7</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">8</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">9</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <span class="no">10</span>
+                                <a class="song" href="#">潮</a>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn add"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="more">
+                            <a href="#" >查看全部 &gt</a>
+                        </div>
+                       </dd>
+                    </dl>
+                    <dl class="ranklist rank-new">
+                        <dt class="header">
+                            <div class="album">
+                                <img src="./image/ranknew.jpg" alt="">
+                                <a class="cover" href="#"></a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title">新歌榜</h3>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </div>
+                           </dt>
+                           <dd class="list up-list">
+                            <ol>
+                                <li class="item">
+                                    <span class="no">1</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">2</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">3</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">4</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">5</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">6</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">7</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">8</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">9</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">10</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                            </ol>
+                            <div class="more">
+                                <a href="#" >查看全部 &gt</a>
+                            </div>
+                           </dd>
+                    </dl>
+                    <dl class="ranklist rank-origin">
+                        <dt class="header">
+                            <div class="album">
+                                <img src="./image/rankorigin.jpg" alt="">
+                                <a class="cover" href="#"></a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title">原创榜</h3>
+                                <div class="operation">
+                                    <a href="#" class="btn play"></a>
+                                    <a href="#" class="btn favor"></a>
+                                </div>
+                            </div>
+                           </dt>
+                           <dd class="list up-list">
+                            <ol>
+                                <li class="item">
+                                    <span class="no">1</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">2</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">3</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">4</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">5</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">6</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">7</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">8</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">9</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <span class="no">10</span>
+                                    <a class="song" href="#">潮</a>
+                                    <div class="operation">
+                                        <a href="#" class="btn play"></a>
+                                        <a href="#" class="btn add"></a>
+                                        <a href="#" class="btn favor"></a>
+                                    </div>
+                                </li>
+                            </ol>
+                            <div class="more">
+                                <a href="#" >查看全部 &gt</a>
+                            </div>
+                           </dd>
+                    </dl>
+                </div>
+            </div>
+            </div>
+
+            <div class="area-right">
+                <div class="user-login">
+                    <p class="desc">
+                        登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机
+                    </p>
+                    <a href="#" class="btn" >用户登录</a>
+                </div>
+                <div class="settle-singer">
+                    <div class="header_small">
+                        <h3 class="title">入驻歌手</h3>
+                        <a href="#" class="more">查看更多 &gt</a>                 
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./image/amei.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEi</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                                
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./image/amei.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEi</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                                
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./image/amei.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEi</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                                
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./image/amei.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEi</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                                
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./image/amei.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEi</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                                
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="hot-anchor">
+                        <div class="header_small">
+                            <h3 class="title">热门主播</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div> 
+</body>
+</html>
